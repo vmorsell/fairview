@@ -12,9 +12,9 @@ Fairview is a Chrome browser extension that removes unconscious bias from Linked
 
 Fairview is a Chrome extension designed for Chromium-based browsers. It has been tested and confirmed to work in:
 
-✅ Brave
-✅ Google Chrome
-✅ Microsoft Edge
+- Brave
+- Google Chrome
+- Microsoft Edge
 
 It should also work in other Chromium-based browsers like Opera and Vivaldi, though they have not been tested.
 
@@ -46,8 +46,8 @@ Currently only available through manual install.
 4. Load the extension in your browser
 
    - Navigate to `chrome://extensions`
-   - Enable **Developer mode** (top right)
-   - Click **Load unpacked** and select the `dist/` folder
+   - Enable **Developer mode**
+   - Click **Load Unpacked** and select the `dist/` folder
 
 5. Open the plugin and enable blurring
 6. For best experience, pin the plugin for easy access to the blur toggle
