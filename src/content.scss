@@ -1,0 +1,205 @@
+// A bit of a hack, but doesn't seem to break anything
+$transition-type: 0.5s ease-in-out;
+
+* {
+  transition:
+    filter $transition-type,
+    width $transition-type,
+    height $transition-type;
+}
+
+// === VARIABLES ===
+$blur-sizes: (
+  sm: 2px,
+  md: 4px,
+  lg: 6px,
+  xl: 8px,
+  2xl: 10px,
+);
+
+// === CLASSES ===
+@each $size, $value in $blur-sizes {
+  .blur-#{$size} {
+    filter: blur($value) saturate(0);
+  }
+}
+
+.hidden {
+  filter: opacity(0);
+  width: 0;
+  height: 0;
+}
+
+.no-click {
+  pointer-events: none;
+}
+
+// === BLUR BIAS-TRIGGERING INFORMATION ===
+body.blur-active {
+  // === FEED ===
+
+  // Blur pictures and names of post authors
+  .update-components-actor__container {
+    img {
+      @extend .blur-md;
+    }
+    .update-components-actor__title span[dir='ltr'] > span[aria-hidden='true'] {
+      @extend .blur-md;
+    }
+  }
+
+  // Blur pictures and names in post headers (e.g., "Person X likes this")
+  .update-components-header__text-wrapper {
+    img {
+      @extend .blur-sm;
+    }
+    .update-components-header__text-view a {
+      @extend .blur-md;
+    }
+  }
+
+  // === PROFILE ===
+
+  // Hide LinkedIn's own hover tooltip
+  // This is used to show the name of the profile owner
+  #artdeco-hoverable-outlet {
+    @extend .hidden;
+  }
+
+  // Blur profile header image
+  .profile-background-image__image {
+    @extend .blur-2xl;
+  }
+
+  .artdeco-card {
+    // Blur picture and name in profile header
+    .pv-top-card-profile-picture__container {
+      @extend .no-click;
+
+      img {
+        @extend .blur-2xl;
+      }
+    }
+
+    // Blur name in profile header
+    .artdeco-hoverable-trigger.artdeco-hoverable-trigger--content-placed-bottom.artdeco-hoverable-trigger--is-hoverable.ember-view
+      h1 {
+      @extend .blur-lg;
+    }
+
+    // Hide LinkedIn subscription badge
+    .pv-member-badge,
+    .pv-top-card__premium-feature-banner {
+      @extend .hidden;
+    }
+
+    // Blur author name in recent comment
+    .feed-mini-update-contextual-description__text strong {
+      @extend .blur-sm;
+    }
+  }
+
+  // Blur picture and name in sticky header
+  .scaffold-layout-toolbar__content {
+    img {
+      @extend .blur-sm;
+    }
+    .artdeco-entity-lockup__title {
+      @extend .blur-md;
+    }
+  }
+
+  // Hide highlights section
+  section:has(#highlights) {
+    @extend .hidden;
+  }
+
+  // Blur author pictures and names in recommendations section
+  #recommendations ~ .artdeco-tabs.artdeco-tabs--size-t-48 {
+    img {
+      @extend .blur-md;
+    }
+    .display-flex.align-items-center.mr1.hoverable-link-text.t-bold span[aria-hidden='true'] {
+      @extend .blur-md;
+    }
+  }
+
+  // Right hand sidebar
+  .pv-profile-card {
+    // Blur picture
+    a:is(
+        [data-field='browsemap_card_click'],
+        [data-field='premium_spotlight_card_click'],
+        [data-field='pymk_position_card_click']
+      ) {
+      img {
+        @extend .blur-md;
+      }
+
+      // Blur name
+      .display-flex.align-items-center.mr1.hoverable-link-text.t-bold span[aria-hidden='true'] {
+        @extend .blur-md;
+      }
+
+      // Hide LinkedIn subscription badge
+      .ivm-view-attr__icon--premium-inbug {
+        @extend .hidden;
+      }
+    }
+  }
+
+  // Blur name in modals
+  #artdeco-modal-outlet {
+    .artdeco-modal__header {
+      @extend .blur-md;
+    }
+    h2 a {
+      @extend .blur-md;
+    }
+  }
+
+  // === TOPBAR SEARCH AUTOCOMPLETE ===
+
+  .search-global-typeahead__content {
+    // Blur pictures and names in Recent visits
+    .search-history-list__entity {
+      img {
+        @extend .blur-sm;
+      }
+      .typeahead-suggestion--carousel-item-text {
+        @extend .blur-md;
+      }
+    }
+
+    // Blur pictures and names in "See all" recent visits
+    .search-see-all__item {
+      img {
+        @extend .blur-sm;
+      }
+      .search-global-typeahead-hit__text {
+        @extend .blur-md;
+      }
+    }
+  }
+
+  // === SEARCH RESULTS ===
+
+  .search-results-container {
+    div[data-view-name='search-entity-result-universal-template'] {
+      // Blur pictures
+      img {
+        @extend .blur-md;
+      }
+
+      // Blur names
+      span[dir='ltr'] span[aria-hidden='true'] {
+        @extend .blur-md;
+      }
+
+      // LinkedIn subscription badge
+      .entity-result__badge-icon {
+        @extend .hidden;
+      }
+    }
+  }
+}

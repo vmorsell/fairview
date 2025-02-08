@@ -1,0 +1,41 @@
+{
+  "name": "fairview",
+  "version": "0.1.0",
+  "description": "A browser extension that removes bias from LinkedIn by blurring profile pictures, names, and premium badges, helping recruiters focus on skills.",
+  "main": "background.js",
+  "scripts": {
+    "dev": "webpack --config webpack.dev.js --watch",
+    "build": "webpack --config webpack.prod.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vmorsell/fairview.git"
+  },
+  "author": "Viktor Mörsell <viktor@upper.st>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vmorsell/fairview/issues"
+  },
+  "homepage": "https://github.com/vmorsell/fairview#readme",
+  "devDependencies": {
+    "@types/chrome": "^0.0.304",
+    "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.20.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "prettier": "^3.4.2",
+    "sass": "^1.84.0",
+    "sass-loader": "^16.0.4",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.7.3",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
