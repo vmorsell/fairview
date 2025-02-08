@@ -1,7 +1,7 @@
 {
   "name": "fairview",
   "version": "0.1.0",
-  "description": "A browser extension that removes bias from LinkedIn by blurring profile pictures, names, and premium badges, helping recruiters focus on skills.",
+  "description": "A browser extension that removes bias from LinkedIn by blurring profile pictures, names, and premium badges - so you focus on skills, not stereotypes.",
   "main": "background.js",
   "scripts": {
     "dev": "webpack --config webpack.dev.js --watch",
