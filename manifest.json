@@ -1,7 +1,7 @@
 {
   "name": "Fairview - Unbiased LinkedIn Sourcing",
   "short_name": "Fairview",
-  "description": "Discover potential candidates on LinkedIn based on experience, not appearances. Fairview blurs profile pictures, names, and Premium badges - helping you focus on skills, not subconscious biases.",
+  "description": "Fairview blurs profile pictures, names, and Premium badges on LinkedIn - helping you focus on skills, not subconscious biases.",
   "version": "0.2.0",
   "manifest_version": 3,
   "permissions": ["storage", "scripting"],
