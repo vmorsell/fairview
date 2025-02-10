@@ -31,7 +31,9 @@ jobs:
         run: npm run build
 
       - name: Build archive
-        run: zip -r fairview.zip dist/*
+        run: |
+          mv dist fairview
+          zip -r fairview.zip fairview
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
