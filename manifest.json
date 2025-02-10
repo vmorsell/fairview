@@ -2,7 +2,7 @@
   "name": "Fairview - Unbiased LinkedIn Sourcing",
   "short_name": "Fairview",
   "description": "Fairview blurs profile pictures, names, and Premium badges on LinkedIn - helping you focus on skills, not subconscious biases.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "manifest_version": 3,
   "permissions": ["storage", "scripting"],
   "host_permissions": ["https://www.linkedin.com/*"],
