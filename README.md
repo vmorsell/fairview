@@ -1,4 +1,4 @@
-# Fairview – Unbiased Sourcing for LinkedIn
+# Fairview – Unbiased LinkedIn Sourcing
 
 Fairview is a browser extension that helps you discover potential candidates on LinkedIn based on experience, not appearances. It blurs profile pictures, names, and Premium badges - helping you focus on skills, not subconscious biases.
 
