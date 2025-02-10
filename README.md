@@ -1,12 +1,12 @@
-# Fairview – Unbiased Hiring on LinkedIn
+# Fairview – Unbiased Sourcing for LinkedIn
 
-Fairview is a browser extension that removes unconscious bias from LinkedIn sourcing by blurring profile pictures, names, and premium badges, allowing you to focus on skills rather than appearance.
+Fairview is a browser extension that helps you discover potential candidates on LinkedIn based on experience, not appearances. It blurs profile pictures, names, and Premium badges - helping you focus on skills, not subconscious biases.
 
 ## 🚀 Features
 
-- Automatically blurs **profile pictures**, **names**, and **LinkedIn subscriptions**.
-- Toggle the blur effect on and off via the extension popup.
-- Works seamlessly with LinkedIn's UI.
+- Blurs **profile pictures**, **names**, and **Premium badges**
+- Easy toggle to enable or disable the blur effect
+- Works seamlessly with LinkedIn's UI
 
 ## 🌍 Browser Compatibility
 

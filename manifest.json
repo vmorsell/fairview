@@ -1,7 +1,7 @@
 {
-  "name": "Fairview - Unbiased Hiring on LinkedIn",
+  "name": "Fairview - Unbiased Sourcing on LinkedIn",
   "short_name": "Fairview",
-  "description": "Remove unconscious bias from LinkedIn sourcing by automatically blurring profile pictures, names, and premium badges - so you focus on skills, not stereotypes.",
+  "description": "Discover potential candidates on LinkedIn based on experience, not appearances. Fairview blurs profile pictures, names, and Premium badges - helping you focus on skills, not subconscious biases.",
   "version": "0.2.0",
   "manifest_version": 3,
   "permissions": ["storage", "scripting"],
