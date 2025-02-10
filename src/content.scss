@@ -19,15 +19,36 @@ $blur-sizes: (
 }
 
 .hidden {
-  transition:
-    opacity 0.5s ease-in-out,
-    width 0.5s ease-in-out,
-    height 0.5s ease-in-out;
+  display: none;
+}
+
+.squash-base {
+  transition: padding 0.5s ease-in-out;
 
   body.blur-active & {
-    filter: opacity(0);
-    width: 0;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+  }
+}
+
+.squash-y {
+  @extend .squash-base;
+
+  transition: height 0.5s ease-in-out;
+
+  body.blur-active & {
     height: 0;
+  }
+}
+
+.squash-x {
+  @extend .squash-base;
+
+  transition: width 0.5s ease-in-out;
+
+  body.blur-active & {
+    width: 0;
   }
 }
 
@@ -87,9 +108,8 @@ body.blur-active .no-click {
   }
 
   // Hide LinkedIn subscription badge
-  .pv-member-badge,
   .pv-top-card__premium-feature-banner {
-    @extend .hidden;
+    @extend .squash-y;
   }
 
   // Blur author name in recent comment
@@ -110,7 +130,7 @@ body.blur-active .no-click {
 
 // Hide highlights section
 section:has(#highlights) {
-  @extend .hidden;
+  @extend .squash-y;
 }
 
 // Blur author pictures and names in recommendations section
@@ -142,7 +162,7 @@ section:has(#highlights) {
 
     // Hide LinkedIn subscription badge
     .ivm-view-attr__icon--premium-inbug {
-      @extend .hidden;
+      @extend .squash-x;
     }
   }
 }
@@ -197,7 +217,7 @@ section:has(#highlights) {
 
     // LinkedIn subscription badge
     .entity-result__badge-icon {
-      @extend .hidden;
+      @extend .squash-x;
     }
   }
 }
