@@ -107,7 +107,12 @@ body.blur-active .no-click {
     @extend .blur-lg;
   }
 
-  // Hide LinkedIn subscription badge
+  // Hide Premium badge
+  .pv-member-badge--for-top-card {
+    @extend .squash-y;
+  }
+
+  // Hide "Profile enhanced with Premium" notice
   .pv-top-card__premium-feature-banner {
     @extend .squash-y;
   }
