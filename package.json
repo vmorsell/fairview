@@ -1,6 +1,6 @@
 {
   "name": "fairview",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Browser extension that helps you discover potential candidates on LinkedIn based on experience, not appearances. Fairview blurs profile pictures, names, and Premium badges - helping you focus on skills, not subconscious biases.",
   "main": "background.js",
   "scripts": {
@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/vmorsell/fairview.git"
   },
-  "author": "Viktor Mörsell <viktor@upper.st>",
+  "author": "Viktor Mörsell <viktor-fairview@upper.st>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/vmorsell/fairview/issues"
