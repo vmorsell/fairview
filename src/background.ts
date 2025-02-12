@@ -6,9 +6,10 @@ chrome.runtime.onMessage.addListener((msg, _sender, _sendResponse) => {
         return;
       }
 
+      const tabId = tabs[0].id;
       chrome.scripting.executeScript(
         {
-          target: { tabId: tabs[0].id },
+          target: { tabId },
           func: () => document.readyState === 'complete',
         },
         (results) => {
@@ -22,12 +23,7 @@ chrome.runtime.onMessage.addListener((msg, _sender, _sendResponse) => {
             return;
           }
 
-          if (!tabs[0].id) {
-            console.error('tab id not found');
-            return;
-          }
-
-          chrome.tabs.sendMessage(tabs[0].id, {
+          chrome.tabs.sendMessage(tabId, {
             action: 'applyBlur',
             enabled: msg.enabled,
           });

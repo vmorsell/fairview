@@ -14,13 +14,7 @@ function applyBlur(enabled: boolean): void {
     return;
   }
 
-  const classList = document.body.classList;
-
-  if (enabled) {
-    classList.add(className);
-  } else {
-    classList.remove(className);
-  }
+  document.body.classList.toggle(className, enabled);
 }
 
 // Load initial state
