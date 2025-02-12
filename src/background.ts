@@ -1,7 +1,7 @@
 chrome.runtime.onMessage.addListener((msg, _sender, _sendResponse) => {
   if (msg.action === 'toggleBlur') {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-      if (tabs.length === 0 || !tabs[0].id) {
+      if (!tabs || tabs.length === 0 || !tabs[0].id) {
         console.error('no active tab found');
         return;
       }
@@ -12,6 +12,11 @@ chrome.runtime.onMessage.addListener((msg, _sender, _sendResponse) => {
           func: () => document.readyState === 'complete',
         },
         (results) => {
+          if (chrome.runtime.lastError) {
+            console.error('script execution error:', chrome.runtime.lastError.message);
+            return;
+          }
+
           if (!results || !results[0]?.result) {
             console.error('content script not ready');
             return;

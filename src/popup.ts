@@ -9,12 +9,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   chrome.storage.sync.get('blurEnabled', (data) => {
+    if (chrome.runtime.lastError) {
+      console.error('get blurEnabled:', chrome.runtime.lastError.message);
+      return;
+    }
+
     toggle.checked = data.blurEnabled ?? false;
   });
 
   toggle.addEventListener('change', () => {
     const enabled: boolean = toggle.checked;
-    chrome.storage.sync.set({ blurEnabled: enabled });
-    chrome.runtime.sendMessage({ action: 'toggleBlur', enabled });
+
+    chrome.storage.sync.set({ blurEnabled: enabled }, () => {
+      if (chrome.runtime.lastError) {
+        console.error('save blurEnabled:', chrome.runtime.lastError.message);
+        return;
+      }
+
+      chrome.runtime.sendMessage({ action: 'toggleBlur', enabled });
+    });
   });
 });
