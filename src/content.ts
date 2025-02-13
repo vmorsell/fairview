@@ -1,11 +1,5 @@
 import './content.scss';
 
-chrome.runtime.onMessage.addListener((msg) => {
-  if (msg.action === 'applyBlur') {
-    applyBlur(msg.enabled);
-  }
-});
-
 function applyBlur(enabled: boolean): void {
   const className = 'blur-active';
 
@@ -20,4 +14,10 @@ function applyBlur(enabled: boolean): void {
 // Load initial state
 chrome.storage.sync.get('blurEnabled', (data) => {
   applyBlur(data.blurEnabled ?? false);
+});
+
+chrome.storage.onChanged.addListener((changes, area) => {
+  if (area === 'sync' && changes.blurEnabled) {
+    applyBlur(changes.blurEnabled.newValue);
+  }
 });

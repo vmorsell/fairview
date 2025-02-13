@@ -25,8 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('save blurEnabled:', chrome.runtime.lastError.message);
         return;
       }
-
-      chrome.runtime.sendMessage({ action: 'toggleBlur', enabled });
     });
   });
 });
