@@ -63,7 +63,8 @@ body.blur-active .no-click {
   img {
     @extend .blur-md;
   }
-  .update-components-actor__title span[dir='ltr'] > span[aria-hidden='true'] {
+
+  .update-components-actor__title span[dir='ltr']>span[aria-hidden='true'] {
     @extend .blur-md;
   }
 }
@@ -73,6 +74,7 @@ body.blur-active .no-click {
   img {
     @extend .blur-sm;
   }
+
   .update-components-header__text-view a {
     @extend .blur-md;
   }
@@ -92,6 +94,7 @@ body.blur-active .no-click {
 }
 
 .artdeco-card {
+
   // Blur picture and name in profile header
   .pv-top-card-profile-picture__container {
     @extend .no-click;
@@ -102,9 +105,13 @@ body.blur-active .no-click {
   }
 
   // Blur name in profile header
-  .artdeco-hoverable-trigger.artdeco-hoverable-trigger--content-placed-bottom.artdeco-hoverable-trigger--is-hoverable.ember-view
-    h1 {
+  .artdeco-hoverable-trigger.artdeco-hoverable-trigger--content-placed-bottom.artdeco-hoverable-trigger--is-hoverable.ember-view h1 {
     @extend .blur-lg;
+  }
+
+  // Hide Verification badge
+  .pv-text-details__verified-badge-icon {
+    @extend .squash-x;
   }
 
   // Hide Premium badge
@@ -128,6 +135,7 @@ body.blur-active .no-click {
   img {
     @extend .blur-sm;
   }
+
   .artdeco-entity-lockup__title {
     @extend .blur-md;
   }
@@ -139,10 +147,11 @@ section:has(#highlights) {
 }
 
 // Blur author pictures and names in recommendations section
-#recommendations ~ .artdeco-tabs.artdeco-tabs--size-t-48 {
+#recommendations~.artdeco-tabs.artdeco-tabs--size-t-48 {
   img {
     @extend .blur-md;
   }
+
   .display-flex.align-items-center.mr1.hoverable-link-text.t-bold span[aria-hidden='true'] {
     @extend .blur-md;
   }
@@ -150,12 +159,11 @@ section:has(#highlights) {
 
 // Right hand sidebar
 .pv-profile-card {
+
   // Blur picture
-  a:is(
-      [data-field='browsemap_card_click'],
-      [data-field='premium_spotlight_card_click'],
-      [data-field='pymk_position_card_click']
-    ) {
+  a:is([data-field='browsemap_card_click'],
+    [data-field='premium_spotlight_card_click'],
+    [data-field='pymk_position_card_click']) {
     img {
       @extend .blur-md;
     }
@@ -177,6 +185,7 @@ section:has(#highlights) {
   .artdeco-modal__header {
     @extend .blur-md;
   }
+
   h2 a {
     @extend .blur-md;
   }
@@ -185,11 +194,13 @@ section:has(#highlights) {
 // === TOPBAR SEARCH AUTOCOMPLETE ===
 
 .search-global-typeahead__content {
+
   // Blur pictures and names in Recent visits
   .search-history-list__entity {
     img {
       @extend .blur-sm;
     }
+
     .typeahead-suggestion--carousel-item-text {
       @extend .blur-md;
     }
@@ -200,6 +211,7 @@ section:has(#highlights) {
     img {
       @extend .blur-sm;
     }
+
     .search-global-typeahead-hit__text {
       @extend .blur-md;
     }
@@ -210,6 +222,7 @@ section:has(#highlights) {
 
 .search-results-container {
   div[data-view-name='search-entity-result-universal-template'] {
+
     // Blur pictures
     img {
       @extend .blur-md;
@@ -220,9 +233,13 @@ section:has(#highlights) {
       @extend .blur-md;
     }
 
-    // LinkedIn subscription badge
-    .entity-result__badge-icon {
-      @extend .squash-x;
+    // LinkedIn badges
+    .entity-result__badge {
+
+      .reusable-search-modal-badge__verified-badge-button,
+      .ivm-view-attr__icon {
+        @extend .squash-x;
+      }
     }
   }
 }
