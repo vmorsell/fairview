@@ -29,7 +29,9 @@ jq --arg new_version "$MAJOR.$MINOR.$PATCH" '.version = $new_version' manifest.j
 # Update package.json
 jq --arg new_version "$MAJOR.$MINOR.$PATCH" '.version = $new_version' package.json > tmp.json && mv tmp.json package.json
 
-git add manifest.json package.json 2>/dev/null
+npm i --package-lock-only
+
+git add manifest.json package.json package-lock.json 2>/dev/null
 git commit -m "Release $NEW_VERSION"
 git tag "$NEW_VERSION"
 
