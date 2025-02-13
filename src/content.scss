@@ -8,48 +8,35 @@ $blur-sizes: (
 );
 
 // === CLASSES ===
+@mixin blur-effect($value) {
+  transition: filter 0.5s ease-in-out;
+
+  body.blur-active & {
+    filter: blur($value) saturate(0);
+  }
+}
+
+@mixin squash($property) {
+  transition:
+    #{$property} 0.5s ease-in-out,
+    padding 0.5s ease-in-out;
+
+  body.blur-active & {
+    #{$property}: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+}
+
 @each $size, $value in $blur-sizes {
   .blur-#{$size} {
-    transition: filter 0.5s ease-in-out;
-
-    body.blur-active & {
-      filter: blur($value) saturate(0);
-    }
+    @include blur-effect($value);
   }
 }
 
 .hidden {
   display: none;
-}
-
-.squash-base {
-  transition: padding 0.5s ease-in-out;
-
-  body.blur-active & {
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden;
-  }
-}
-
-.squash-y {
-  @extend .squash-base;
-
-  transition: height 0.5s ease-in-out;
-
-  body.blur-active & {
-    height: 0;
-  }
-}
-
-.squash-x {
-  @extend .squash-base;
-
-  transition: width 0.5s ease-in-out;
-
-  body.blur-active & {
-    width: 0;
-  }
 }
 
 body.blur-active .no-click {
@@ -64,7 +51,7 @@ body.blur-active .no-click {
     @extend .blur-md;
   }
 
-  .update-components-actor__title span[dir='ltr']>span[aria-hidden='true'] {
+  .update-components-actor__title span[dir='ltr'] > span[aria-hidden='true'] {
     @extend .blur-md;
   }
 }
@@ -94,7 +81,6 @@ body.blur-active .no-click {
 }
 
 .artdeco-card {
-
   // Blur picture and name in profile header
   .pv-top-card-profile-picture__container {
     @extend .no-click;
@@ -105,23 +91,24 @@ body.blur-active .no-click {
   }
 
   // Blur name in profile header
-  .artdeco-hoverable-trigger.artdeco-hoverable-trigger--content-placed-bottom.artdeco-hoverable-trigger--is-hoverable.ember-view h1 {
+  .artdeco-hoverable-trigger.artdeco-hoverable-trigger--content-placed-bottom.artdeco-hoverable-trigger--is-hoverable.ember-view
+    h1 {
     @extend .blur-lg;
   }
 
   // Hide Verification badge
   .pv-text-details__verified-badge-icon {
-    @extend .squash-x;
+    @include squash('width');
   }
 
   // Hide Premium badge
   .pv-member-badge--for-top-card {
-    @extend .squash-y;
+    @include squash('height');
   }
 
   // Hide "Profile enhanced with Premium" notice
   .pv-top-card__premium-feature-banner {
-    @extend .squash-y;
+    @include squash('height');
   }
 
   // Blur author name in recent comment
@@ -143,11 +130,11 @@ body.blur-active .no-click {
 
 // Hide highlights section
 section:has(#highlights) {
-  @extend .squash-y;
+  @include squash('height');
 }
 
 // Blur author pictures and names in recommendations section
-#recommendations~.artdeco-tabs.artdeco-tabs--size-t-48 {
+#recommendations ~ .artdeco-tabs.artdeco-tabs--size-t-48 {
   img {
     @extend .blur-md;
   }
@@ -159,11 +146,12 @@ section:has(#highlights) {
 
 // Right hand sidebar
 .pv-profile-card {
-
   // Blur picture
-  a:is([data-field='browsemap_card_click'],
-    [data-field='premium_spotlight_card_click'],
-    [data-field='pymk_position_card_click']) {
+  a:is(
+      [data-field='browsemap_card_click'],
+      [data-field='premium_spotlight_card_click'],
+      [data-field='pymk_position_card_click']
+    ) {
     img {
       @extend .blur-md;
     }
@@ -175,7 +163,7 @@ section:has(#highlights) {
 
     // Hide LinkedIn subscription badge
     .ivm-view-attr__icon--premium-inbug {
-      @extend .squash-x;
+      @include squash('width');
     }
   }
 }
@@ -194,7 +182,6 @@ section:has(#highlights) {
 // === TOPBAR SEARCH AUTOCOMPLETE ===
 
 .search-global-typeahead__content {
-
   // Blur pictures and names in Recent visits
   .search-history-list__entity {
     img {
@@ -222,7 +209,6 @@ section:has(#highlights) {
 
 .search-results-container {
   div[data-view-name='search-entity-result-universal-template'] {
-
     // Blur pictures
     img {
       @extend .blur-md;
@@ -235,10 +221,10 @@ section:has(#highlights) {
 
     // LinkedIn badges
     .entity-result__badge {
-
       .reusable-search-modal-badge__verified-badge-button,
-      .ivm-view-attr__icon {
-        @extend .squash-x;
+      li-icon[type='linkedin-bug-influencer-color'] svg,
+      li-icon[type='linkedin-bug'] {
+        @include squash('width');
       }
     }
   }
