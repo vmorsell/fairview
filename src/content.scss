@@ -96,6 +96,11 @@ body.blur-active .no-click {
     @extend .blur-lg;
   }
 
+  // Blur pronouns
+  .text-body-small.v-align-middle.break-words.t-black--light {
+    @extend .blur-md;
+  }
+
   // Hide Verification badge
   .pv-text-details__verified-badge-icon {
     @include squash('width');
