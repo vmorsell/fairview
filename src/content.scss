@@ -234,3 +234,17 @@ section:has(#highlights) {
     }
   }
 }
+
+// == LINKEDIN RECRUITER ==
+
+// Blur names of candidates
+.artdeco-entity-lockup__title a {
+  @extend .blur-md;
+}
+
+// Blur profile picures
+.lockup__image--profile-size-5 {
+  img {
+    @extend .blur-xl;
+  }
+}
