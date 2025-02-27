@@ -237,14 +237,22 @@ section:has(#highlights) {
 
 // == LINKEDIN RECRUITER ==
 
-// Blur names of candidates
+// Blur names in Talent Pool and Pipeline
 .artdeco-entity-lockup__title a {
-  @extend .blur-md;
+  @extend .blur-lg;
 }
-
-// Blur profile picures
+// Blur pictures in Talent Pool and Pipeline
 .lockup__image--profile-size-5 {
   img {
     @extend .blur-xl;
   }
+}
+
+// Blur names in Candidate preview
+.artdeco-entity-lockup__title {
+  @extend .blur-lg;
+}
+// Blur pictures in Candidate preview 
+.artdeco-entity-lockup__image {
+    @extend .blur-xl;
 }
