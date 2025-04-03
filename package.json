@@ -1,6 +1,6 @@
 {
   "name": "fairview",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Browser extension that helps you discover potential candidates on LinkedIn based on experience, not appearances. Fairview blurs profile pictures, names, and Premium badges - helping you focus on skills, not subconscious biases.",
   "main": "background.js",
   "scripts": {
