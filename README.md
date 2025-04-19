@@ -4,13 +4,13 @@
 
 Fairview is a browser extension that helps you discover potential candidates on LinkedIn based on experience, not appearances. It blurs profile pictures, names, and Premium badges - helping you focus on skills, not subconscious biases.
 
-## 🚀 Features
+## Features
 
 - Blurs **profile pictures**, **names**, and **Premium badges**
 - Easy toggle to enable or disable the blur effect
 - Works seamlessly with LinkedIn's UI
 
-## 🛠 Development
+## Development
 
 To start the development server with auto-rebuild
 
@@ -31,10 +31,10 @@ To build a production release
 npm run build
 ```
 
-## 📜 License
+## License
 
 MIT License. See [`LICENSE`](LICENSE) for details.
 
-## 🤝 Contributing
+## Contributing
 
-Pull requests are welcome. Please ensure that any features aligns wiht the project's goals.
+Pull requests are welcome. Please ensure that any features aligns with the project's goals.
