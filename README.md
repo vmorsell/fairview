@@ -1,5 +1,7 @@
 # Fairview – Unbiased LinkedIn Sourcing
 
+[![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/mabnbpdoeinilfmgofjheolpbnihnbhe?logoColor=fff&label=Get%20it%20for%20Chrome%20%2F%20Edge%20%2F%20Brave&color=green)](https://chromewebstore.google.com/detail/fairview-unbiased-linkedi/mabnbpdoeinilfmgofjheolpbnihnbhe)
+
 Fairview is a browser extension that helps you discover potential candidates on LinkedIn based on experience, not appearances. It blurs profile pictures, names, and Premium badges - helping you focus on skills, not subconscious biases.
 
 ## 🚀 Features
@@ -7,32 +9,6 @@ Fairview is a browser extension that helps you discover potential candidates on 
 - Blurs **profile pictures**, **names**, and **Premium badges**
 - Easy toggle to enable or disable the blur effect
 - Works seamlessly with LinkedIn's UI
-
-## 🌍 Browser Compatibility
-
-Fairview is designed for Chromium-based browsers. It has been tested and confirmed to work in:
-
-- Google Chrome
-- Brave
-- Microsoft Edge
-
-It should also work in other Chromium-based browsers like Opera and Vivaldi, though they have not been tested.
-
-🚫 Not yet supported in Firefox, Safari, and other non-Chromium browsers.
-
-## 📦 Usage
-
-Fairview is currently only available through manual install.
-
-1. Go to http://github.com/vmorsell/fairview/releases/latest and download `fairview.zip`
-2. Unzip
-3. Load the extension in your browser
-
-   - Navigate to `chrome://extensions`
-   - Enable **Developer mode**
-   - Click **Load Unpacked** and select the unpacked folder
-
-4. For best experience, pin the plugin for easy access to the blur toggle
 
 ## 🛠 Development
 
