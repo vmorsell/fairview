@@ -24,8 +24,8 @@ The extension is available for:
 To start the development server:
 
 ```bash
-# For Chrome/Edge/Opera
-npm run dev
+# For Chrome/Edge/Brave
+npm run dev:chrome
 
 # For Firefox
 npm run dev:firefox
@@ -41,8 +41,8 @@ npm run format
 To build production releases:
 
 ```bash
-# For Chrome/Edge/Opera
-npm run build
+# For Chrome/Edge/Brave
+npm run build:chrome
 
 # For Firefox
 npm run build:firefox
@@ -50,7 +50,7 @@ npm run build:firefox
 
 The builds will be available in the `dist` directory:
 
-- Chrome/Edge/Opera: `dist/chrome/`
+- Chrome/Edge/Brave: `dist/chrome/`
 - Firefox: `dist/firefox/`
 
 ## License
