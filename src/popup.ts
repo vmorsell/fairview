@@ -1,4 +1,5 @@
 import './popup.scss';
+import browserAPI from './browser-api';
 
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('blur-toggle') as HTMLInputElement;
@@ -8,21 +9,22 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
-  chrome.storage.sync.get('blurEnabled', (data) => {
-    if (chrome.runtime.lastError) {
-      console.error('get blurEnabled:', chrome.runtime.lastError.message);
+  // Load initial state
+  browserAPI.storage.sync.get('blurEnabled').then((data: any) => {
+    if (browserAPI.runtime.lastError) {
+      console.error('Error loading blurEnabled:', browserAPI.runtime.lastError);
       return;
     }
-
     toggle.checked = data.blurEnabled ?? false;
   });
 
-  toggle.addEventListener('change', () => {
-    const enabled: boolean = toggle.checked;
+  // Handle toggle changes
+  toggle.addEventListener('click', () => {
+    const enabled = toggle.checked;
 
-    chrome.storage.sync.set({ blurEnabled: enabled }, () => {
-      if (chrome.runtime.lastError) {
-        console.error('save blurEnabled:', chrome.runtime.lastError.message);
+    browserAPI.storage.sync.set({ blurEnabled: enabled }).then(() => {
+      if (browserAPI.runtime.lastError) {
+        console.error('Error saving blurEnabled:', browserAPI.runtime.lastError);
         return;
       }
     });

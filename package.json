@@ -4,8 +4,11 @@
   "description": "Browser extension that helps you discover potential candidates on LinkedIn based on experience, not appearances. Fairview blurs profile pictures, names, and Premium badges - helping you focus on skills, not subconscious biases.",
   "main": "background.js",
   "scripts": {
-    "dev": "webpack --config webpack.dev.js --watch",
-    "build": "webpack --config webpack.prod.js",
+    "dev:chrome": "NODE_ENV=development webpack --config webpack.chrome.js --watch",
+    "dev:firefox": "NODE_ENV=development webpack --config webpack.firefox.js --watch",
+    "build:chrome": "NODE_ENV=production webpack --config webpack.chrome.js",
+    "build:firefox": "NODE_ENV=production webpack --config webpack.firefox.js",
+    "build": "npm run build:chrome && npm run build:firefox",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
@@ -23,6 +26,7 @@
   "homepage": "https://github.com/vmorsell/fairview#readme",
   "devDependencies": {
     "@types/chrome": "^0.0.304",
+    "@types/firefox-webext-browser": "^120.0.4",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^7.1.2",

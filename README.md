@@ -10,26 +10,48 @@ Fairview is a browser extension that helps you discover potential candidates on 
 - Easy toggle to enable or disable the blur effect
 - Works seamlessly with LinkedIn's UI
 
+## Browser Support
+
+The extension is available for:
+
+- Chrome
+- Edge
+- Firefox
+- Brave
+
 ## Development
 
-To start the development server with auto-rebuild
+To start the development server:
 
-```sh
+```bash
+# For Chrome/Edge/Opera
 npm run dev
+
+# For Firefox
+npm run dev:firefox
 ```
 
-To lint and format the code
+To lint and format the code:
 
 ```sh
 npm run lint
 npm run format
 ```
 
-To build a production release
+To build production releases:
 
-```sh
+```bash
+# For Chrome/Edge/Opera
 npm run build
+
+# For Firefox
+npm run build:firefox
 ```
+
+The builds will be available in the `dist` directory:
+
+- Chrome/Edge/Opera: `dist/chrome/`
+- Firefox: `dist/firefox/`
 
 ## License
 
