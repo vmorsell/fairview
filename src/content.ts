@@ -1,4 +1,5 @@
 import './content.scss';
+import browserAPI from './browser-api';
 
 function applyBlur(enabled: boolean): void {
   const className = 'blur-active';
@@ -12,12 +13,13 @@ function applyBlur(enabled: boolean): void {
 }
 
 // Load initial state
-chrome.storage.sync.get('blurEnabled', (data) => {
+browserAPI.storage.sync.get('blurEnabled').then((data: any) => {
   applyBlur(data.blurEnabled ?? false);
 });
 
-chrome.storage.onChanged.addListener((changes, area) => {
-  if (area === 'sync' && changes.blurEnabled) {
+// Listen for storage changes
+browserAPI.storage.onChanged.addListener((changes: any, area: string) => {
+  if (area === 'sync' && 'blurEnabled' in changes) {
     applyBlur(changes.blurEnabled.newValue);
   }
 });
