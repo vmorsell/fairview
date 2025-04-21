@@ -27,13 +27,21 @@ jobs:
       - name: Install deps
         run: npm i
 
-      - name: Build
-        run: npm run build
+      - name: Build Chromium version
+        run: npm run build:chrome
 
-      - name: Build archive
+      - name: Build Firefox version
+        run: npm run build:firefox
+
+      - name: Create Chromium archive
         run: |
-          mv dist fairview
-          zip -r fairview.zip fairview
+          mv dist/chrome fairview-chromium
+          zip -r fairview-chromium.zip fairview-chromium
+
+      - name: Create Firefox archive
+        run: |
+          mv dist/firefox fairview-firefox
+          zip -r fairview-firefox.zip fairview-firefox
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
@@ -41,6 +49,8 @@ jobs:
           tag_name: ${{ inputs.tag_name || github.ref_name }}
           name: ${{ inputs.tag_name || github.ref_name }}
           generate_release_notes: true
-          files: fairview.zip
+          files: |
+            fairview-chromium.zip
+            fairview-firefox.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GH_RELEASE_TOKEN }}
