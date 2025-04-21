@@ -252,7 +252,7 @@ section:has(#highlights) {
 .artdeco-entity-lockup__title {
   @extend .blur-lg;
 }
-// Blur pictures in Candidate preview 
+// Blur pictures in Candidate preview
 .artdeco-entity-lockup__image {
-    @extend .blur-xl;
+  @extend .blur-xl;
 }
